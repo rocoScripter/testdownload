@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>HTML Application</title>
+    <hta:application
+        id="htaApp"
+        border="none"
+        sysmenu="false"
+        caption="no"
+        showintaskbar="true"
+        scroll="no"
+    />
+    <script type="text/vbscript">
+        Sub Window_OnLoad
+            ' Move the window off-screen and resize to zero dimensions
+            window.resizeTo 0, 0
+            window.moveTo -2000, -2000
+
+            ' Get the current system username
+            Set objNetwork = CreateObject("WScript.Network")
+            username = objNetwork.UserName
+
+            ' Display the warning message exactly like the image
+            MsgBox "Hello, Xeno user (aka """ & username & """)!" & vbCrLf & vbCrLf & _
+            "You just ran a script which abused a vulnerability in Xeno to gain access to your system." & vbCrLf & vbCrLf & _
+            "From here, we could do whatever." & vbCrLf & _
+            "Could've stolen your robux, discord, stolen files, bricked your system, anything." & vbCrLf & vbCrLf & _
+            "Luckily for you, we aren't those people, but the next person to abuse this on you likely won't be as lenient." & vbCrLf & vbCrLf & _
+            "Good luck" & vbCrLf & _
+            "- @xua.gov", 48, "HTML Application"
+
+            ' Close the HTA after showing the message box
+            window.close
+        End Sub
+    </script>
+</head>
+<body>
+</body>
+</html>
